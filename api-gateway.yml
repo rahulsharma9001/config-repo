@@ -2,6 +2,9 @@ server:
   port: 8080
 
 spring:
+  application:
+    name: api-gateway
+
   cloud:
     gateway:
       routes:
@@ -13,7 +16,7 @@ spring:
           uri: http://localhost:8082
           predicates:
             - Path=/orders/**
-        - id: admin-route
-          uri: http://localhost:8081/admin
-          predicates:
-            - Path=/admin/**
+#        - id: admin-route
+#          uri: http://localhost:8081/admin
+#          predicates:
+#            - Path=/admin/**
